@@ -8,6 +8,7 @@ body,html {width: 100%;height: 100%;font-family: 'pretendard';}
 header{
   width: 100%;
   height: 100vh;
+  position: relative;
   background: url(img/img/intergalactic_christmas_groupshot_2023_1_gips28.jpg) center/cover;
 }
 header > .container {
@@ -18,7 +19,7 @@ header > .container {
 }
 header > .container > #top {
   width: 100%;
-  height: 100px;
+  height: 80px;
   padding: 0 45px;
   background-color: #111;
   display: flex;
@@ -26,9 +27,113 @@ header > .container > #top {
   align-items: center;
   color: #f1f1f1;
 }
+
+/*로고*/
 header > .container > #top > .logo {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 900;
   line-height: 100px;
 }
+.menubtn {display: none;}
 
+/*nav*/
+header > .container > #top > .nav > ul{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+header > .container > #top > .nav > ul > li > a {
+  color: #f1f1f1;
+}
+/*768px nav*/
+.w-768_nav {
+  display: none;
+  z-index: 100;
+}
+.w-768_nav > .menubtn {
+  color: #f1f1f1;
+  line-height: 80px;
+}
+.w-768_nav > .menubtn > i {
+  font-size: 35px;
+  display: block;
+}
+.w-768_nav > ul{
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: auto;
+  background: #111;
+  position: absolute;
+  top: 80px; right:0;
+}
+.w-768_nav > ul > li {
+  width: 100%;
+  line-height: 60px;
+  padding: 0 20px;
+}
+/*hover*/
+.w-768_nav > ul > li a:hover {
+  color: rgb(247, 118, 140);
+}
+.w-768_nav > ul > li i:hover {
+  color: rgb(4, 142, 184);
+  cursor: pointer;
+}
+.w-768_nav > ul > li > i {
+  text-align: right;
+  font-size: 30px;
+  display: block;
+}
+.w-768_nav > ul > li > a {
+  display: block;
+  color: #f1f1f1;
+  text-align: center;
+} 
+/*title*/
+#title {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 100px;
+  right: 200px;
+  gap: 350px;
+  z-index: 10;
+}
+#title h2{
+  color: #f1f1f1;
+  font-size: 56px;
+  font-weight: 800;
+  /* position: absolute;
+  top: 30%; right: 0; */
+}
+/*icon*/
+#title > .icon-box {
+  display: flex;
+  gap: 20px;
+}
+#title > .icon-box > .icon {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #f1f1f1;
+  padding: 18px 39px;
+}
+#title > .icon-box > .icon > img {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+#title > .icon-box > .icon > p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #f1f1f1;
+}
+
+/*768*/
+@media (max-width: 768px) {
+  .w-768_nav > .menubtn { display: block; } /*이게 왜 ..???768안에 들어있능데*/
+  header > .container > #top > .nav{
+    display: none;
+  }
+}
