@@ -11,14 +11,18 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <!-- 올라오는 애니메이션 -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- fullPage.js CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css" />
+  <!-- fullPage.js JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
 </head>
 
 <body>
-  <header>
+  <header class="section" id="1page">
     <div class="container">
       <div id="top">
         <div class="logo">LUSH</div>
-        
+
         <div class="nav">
           <ul>
             <li><a href="#">러쉬소개</a></li>
@@ -41,11 +45,13 @@
         </div>
       </div>
       <div id="title">
-        <h2>
-          지친피부에
-          <br>
-          충전이 필요한 지금!
-        </h2>
+        <div class="txt">
+          <h2>
+            지친피부에
+            <br>
+            충전이 필요한 지금!
+          </h2>
+        </div>
 
         <div class="icon-box">
           <div class="icon">
@@ -60,6 +66,106 @@
       </div>
     </div>
   </header>
+
+  <!-- lush service -->
+  <main class="section service" id="page2">
+    <div class="container">
+      <article class="sub-title">
+        <h4>LUSH SERVICE</h4>
+        <div class="line"></div>
+      </article>
+      <div class="title">
+        <h4>미리보는 러쉬</h4>
+        <h2>러쉬에서 만나는 다채로운 서비스</h2>
+      </div>
+      <div class="card-wrap">
+        <article class="card">
+          <img src="img/card1.png" alt="서비스">
+          <h2>디지털 덕찌</h2>
+          <p>러쉬 만의 맴버십 뱃지 프로그램<br>
+            덕찌력을 쌓아보세요!<br>
+            특별한 선물이 준비되어 있어요.</p>
+        </article>
+        <article class="card">
+          <img src="img/card2.png" alt="서비스">
+          <h2>회원선물</h2>
+          <p>공식 앱 회원에게만 제공하는<br>
+            365일 신선한 스마트 샘플과<br>
+            깜짝 선물 교환권을 발급해 드려요!</p>
+        </article>
+        <article class="card">
+          <img src="img/card3.png" alt="서비스">
+          <h2>선물하기</h2>
+          <p>주소와 연락처를 몰라도<br>
+            향기로운 선물을 메시지 카드와 함께<br>
+            쇼핑백에 담아 선물해 보세요!</p>
+        </article>
+      </div>
+    </div>
+
+    <div id="lushis">
+
+    </div>
+
+  </main>
+
+  <script>
+    const menuBtn = document.querySelector(".w-768_nav > .menubtn")
+    const showMenu = document.querySelector(".w-768_nav > ul")
+    const closeBtn = document.querySelector(".w-768_nav > ul > .closebtn")
+
+    menuBtn.addEventListener("mouseover", function () {
+      showMenu.style.display = "block"
+    })
+    closeBtn.addEventListener("click", function () {
+      showMenu.style.display = "none"
+    })
+
+
+    // 현재 보이는 섹션의 번호를 저장하는 변수 
+    let current = 1;
+
+    // 전체 섹션의 개수를 저장하는 상수 
+    const total = 3;
+
+    //스크롤 중복 방지를 위한 플래그 변수 
+    let isScrolling = false;
+    // 마우스 휠 이벤트 리스너 추가 
+    window.addEventListener('wheel', (e) => { // 현재 스크롤 중이면 추가 스크롤 방지 
+      if (isScrolling) return;
+      // 스크롤 시작을 표시 
+      isScrolling = true;
+      // 700ms 후에 스크롤 가능 상태로 변경 
+      setTimeout(() => { isScrolling = false; }, 700);
+      // 아래로 스크롤하고 마지막 섹션이 아닐 경우 
+      if (e.deltaY > 0 && current < total) {
+        // 현재 섹션 번호 증가 
+        current++;
+        // 다음 섹션을 위로 올림 
+        upSections();
+        // 위로 스크롤하고 첫 번째 섹션이 아닐 경우 
+      } else if (e.deltaY < 0 && current > 1) {
+        // 현재 섹션을 아래로 내림 
+        downSection();
+        // 현재 섹션 번호 감소 
+        current--;
+      }
+    });
+    // 섹션을 위로 올리는 함수 
+    function upSections() { // 현재 섹션 요소를 가져옴 
+      const section = document.getElementById(`section${current}`);
+      // 해당 섹션을 화면에 표시 
+      section.style.transform = `translateY(0%)`;
+    }
+    // 섹션을 아래로 내리는 함수 
+    function downSection() {
+      // 현재 섹션 요소를 가져옴 
+      const section = document.getElementById(`section${current}`);
+      // 해당 섹션을 화면 아래로 이동 
+      section.style.transform = `translateY(100%)`;
+    }
+
+  </script>
 </body>
 
 </html>

@@ -3,6 +3,23 @@
 ul,li {list-style: none;}
 a{text-decoration: none;}
 body,html {width: 100%;height: 100%;font-family: 'pretendard';}
+html {
+  scroll-behavior: smooth;
+}
+
+.section {
+  height: 100vh;
+  width: 100%;
+  position: fixed; /*주석풀기*/ 
+  top: 0;left: 0;
+  transition: transform 0.7s ease-in-out;
+}
+#page1 {
+  transform: translateY(0);
+}
+#page2 {
+  transform: translateY(100%); /*주석풀기*/
+}
 
 /*header*/
 header{
@@ -32,9 +49,9 @@ header > .container > #top {
 header > .container > #top > .logo {
   font-size: 45px;
   font-weight: 900;
-  line-height: 100px;
+  line-height: 80px;
 }
-.menubtn {display: none;}
+.w-768_nav {display: none;}
 
 /*nav*/
 header > .container > #top > .nav > ul{
@@ -48,18 +65,20 @@ header > .container > #top > .nav > ul > li > a {
 /*768px nav*/
 .w-768_nav {
   display: none;
+  /* max-height: 0; */
   z-index: 100;
 }
 .w-768_nav > .menubtn {
   color: #f1f1f1;
   line-height: 80px;
+  cursor: pointer;
 }
 .w-768_nav > .menubtn > i {
   font-size: 35px;
   display: block;
 }
 .w-768_nav > ul{
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 30vw;
   height: auto;
@@ -82,7 +101,7 @@ header > .container > #top > .nav > ul > li > a {
 }
 .w-768_nav > ul > li > i {
   text-align: right;
-  font-size: 30px;
+  font-size: 25px;
   display: block;
 }
 .w-768_nav > ul > li > a {
@@ -92,25 +111,26 @@ header > .container > #top > .nav > ul > li > a {
 } 
 /*title*/
 #title {
+  height: calc(100vh - 80px);
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 100px;
-  right: 200px;
-  gap: 350px;
-  z-index: 10;
 }
-#title h2{
+#title > .txt >  h2{
   color: #f1f1f1;
+  text-align: right;
   font-size: 56px;
   font-weight: 800;
-  /* position: absolute;
-  top: 30%; right: 0; */
+  position: absolute;
+  top: 20%; right: 10%;
 }
 /*icon*/
 #title > .icon-box {
   display: flex;
   gap: 20px;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
 }
 #title > .icon-box > .icon {
   display: flex;
@@ -130,10 +150,147 @@ header > .container > #top > .nav > ul > li > a {
   color: #f1f1f1;
 }
 
+/*lush service*/
+  .service {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #fff;
+    /* padding: 120px 0; */
+  }
+  .service > .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 120px 45px;
+    outline: 1px solid blue;
+  }
+  .service > .container > .sub-title { /*위치 조정 여쭤보기*/
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    outline: 1px solid pink;
+    top: 40%; left: 65px;
+    transform: rotate(90deg) translateX(-100%);
+    transform-origin: top left;
+  }
+  .service > .container > .sub-title > h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+  }
+  .service > .container > .sub-title > .line {
+    width: 120px;
+    height: 1px;
+    background-color: #111;
+  }
+
+  /*타이틀*/
+  .service > .container > .title {
+    display: flex;
+    width: 100%;
+    /* padding-top: 120px; */
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+  .service > .container > .title > h4 {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111;
+    text-align: center;
+  }
+  .service > .container > .title > h2 {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 600;
+    color: #111;
+    text-align: center;
+  }
+
+  /*서비스 카드*/
+  .service > .container > .card-wrap {
+    display: flex;
+    gap: 80px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    /* padding-top: 80px; */
+  }
+  .service > .container > .card-wrap > .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* align-content: space-between; */
+    
+    /* width: 18.229%; ❤️ㅍㅐ딩안에서 정렬?*/ 
+    width: 25%;
+    height: 100%;
+  }
+  .service > .container > .card-wrap > .card > img {
+    display: block;
+    border-radius: 50%;
+    width: 100%;
+  }
+  .service > .container > .card-wrap > .card > h2 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    /* margin-top: 40px; */
+  }
+  .service > .container > .card-wrap > .card > p {
+    font-size: 16px;
+    color: #333;
+    /* margin-top: 40px; */
+    text-align: center;
+  }
+
+  /*Lush is*/
+  #lushis {
+    width: 100%;
+    height: 100vh;
+    background-color: pink;
+  }
+
 /*768*/
 @media (max-width: 768px) {
-  .w-768_nav > .menubtn { display: block; } /*이게 왜 ..???768안에 들어있능데*/
+  header > .container > #top > .w-768_nav { display: block; }
   header > .container > #top > .nav{
     display: none;
+  }
+  #title > .txt > h2 {
+    font-size: 48px;
+  }
+  #title > .icon-box > .icon > p {
+    font-size: 16px;
+  }
+}
+/*600*/
+@media (max-width: 600px) {
+  #title > .txt >  h2 {
+    top: 10%; right: 5%;
+  }
+  #title > .icon-box {
+    bottom: 5%;
+    right: 5%;
+  }
+  #title > .txt > h2 {
+    font-size: 40px;
+  }
+  #title > .icon-box > .icon > p {
+    font-size: 14px;
+  }
+  #title > .icon-box > .icon {
+    padding: 10px 20px;
+  }
+}
+
+/*485*/
+@media (max-width: 485px){
+  #title > .txt > h2 {
+    font-size: 35px;
   }
 }
