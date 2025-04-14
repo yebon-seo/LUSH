@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 *{margin: 0;padding: 0;box-sizing: border-box;}
 ul,li {list-style: none;}
 a{text-decoration: none;}
@@ -8,6 +9,7 @@ html {
 }
 
 .section {
+  overflow: hidden;
   height: 100vh;
   width: 100%;
   position: fixed; /*주석풀기*/ 
@@ -20,6 +22,24 @@ html {
 #page2 {
   transform: translateY(100%); /*주석풀기*/
 }
+#page3 {
+  transform: translateY(100%); /*주석풀기*/
+}
+#page4 {
+  transform: translateY(100%); /*주석풀기*/
+}
+#page5 {
+  transform: translateY(100%); /*주석풀기*/
+}
+#page6 {
+  transform: translateY(100%); /*주석풀기*/
+}
+#page7 {
+  transform: translateY(100%);
+}
+/* #page8 {
+  transform: translateY(100%);
+} */
 
 /*header*/
 header{
@@ -74,13 +94,13 @@ header > .container > #top > .nav > ul > li > a {
   cursor: pointer;
 }
 .w-768_nav > .menubtn > i {
-  font-size: 35px;
+  font-size: 32px;
   display: block;
 }
 .w-768_nav > ul{
   display: none;
   flex-direction: column;
-  width: 30vw;
+  width: 40vw;
   height: auto;
   background: #111;
   position: absolute;
@@ -109,6 +129,7 @@ header > .container > #top > .nav > ul > li > a {
   color: #f1f1f1;
   text-align: center;
 } 
+
 /*title*/
 #title {
   height: calc(100vh - 80px);
@@ -152,42 +173,37 @@ header > .container > #top > .nav > ul > li > a {
 
 /*lush service*/
   .service {
-    width: 100%;
-    height: 100vh;
-    position: relative;
     background-color: #fff;
-    /* padding: 120px 0; */
+    padding: 15vh 45px;
   }
   .service > .container {
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 120px 45px;
-    outline: 1px solid blue;
   }
-  .service > .container > .sub-title { /*위치 조정 여쭤보기*/
+  /*서브타이틀*/
+  .service > .sub-title {
     display: flex;
     align-items: center;
     gap: 10px;
     position: absolute;
-    outline: 1px solid pink;
-    top: 40%; left: 65px;
-    transform: rotate(90deg) translateX(-100%);
-    transform-origin: top left;
+    top: 25px; left: 45px;
+    transform: rotate(90deg);
+    transform-origin: bottom left;
   }
-  .service > .container > .sub-title > h4 {
+  .service > .sub-title > h4 {
     font-size: 16px;
     font-weight: 600;
     color: #111;
   }
-  .service > .container > .sub-title > .line {
+  .service > .sub-title > .line {
     width: 120px;
     height: 1px;
     background-color: #111;
   }
 
   /*타이틀*/
-  .service > .container > .title {
+  .service > .title {
     display: flex;
     width: 100%;
     /* padding-top: 120px; */
@@ -196,14 +212,14 @@ header > .container > #top > .nav > ul > li > a {
     justify-content: center;
     align-items: center;
   }
-  .service > .container > .title > h4 {
+  .service > .title > h4 {
     width: 100%;
     font-size: 18px;
     font-weight: 600;
     color: #111;
     text-align: center;
   }
-  .service > .container > .title > h2 {
+  .service > .title > h2 {
     width: 100%;
     font-size: 32px;
     font-weight: 600;
@@ -216,29 +232,31 @@ header > .container > #top > .nav > ul > li > a {
     display: flex;
     gap: 80px;
     width: 100%;
-    height: 100%;
     justify-content: center;
-    /* padding-top: 80px; */
+    align-items: center;
+    flex:1;
+    padding-top: 10vh;
   }
   .service > .container > .card-wrap > .card {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
     /* align-content: space-between; */
-    
-    /* width: 18.229%; ❤️ㅍㅐ딩안에서 정렬?*/ 
     width: 25%;
     height: 100%;
   }
   .service > .container > .card-wrap > .card > img {
     display: block;
     border-radius: 50%;
-    width: 100%;
+    width:30vh;
+    height: 30vh;
   }
   .service > .container > .card-wrap > .card > h2 {
     font-size: 18px;
     font-weight: 600;
     text-align: center;
+    padding: 5vh 0;
     /* margin-top: 40px; */
   }
   .service > .container > .card-wrap > .card > p {
@@ -249,15 +267,293 @@ header > .container > #top > .nav > ul > li > a {
   }
 
   /*Lush is*/
-  #lushis {
-    width: 100%;
-    height: 100vh;
-    background-color: pink;
+  .lushis {
+    background-color: #efefef;
+    padding: 15vh 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  /*서브타이틀*/
+  .lushis > .sub-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 25px; right: 45px;
+    transform: rotate(90deg) translateX(100%);
+    transform-origin: center right;
+  }
+  .lushis > .sub-title > h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+  }
+  .lushis > .sub-title > .line {
+    width: 120px;
+    height: 1px;
+    background-color: #111;
+  }
+  .lushis:nth-child(even) .sub-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 25px; left: 45px;
+    transform: rotate(90deg);
+    transform-origin: bottom left;
+  }
+  .lushis > .container {
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+  .lushis > .container > .img-box {
+    width: 60%;
+    max-width:600px;
+    height: auto;
+    position:relative;
+  }
+  .lushis > .container > .img-box > img {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .lushis > .container > .img-box > h2 {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #f1f1f1;
+    padding: 5vh 4vw;
+    background-color: rgba(0,0,0,0.5);
+    transition: opacity 0.7s;
+  }
+  /*hover*/
+  .lushis > .container > .img-box:hover h2 {
+    display: flex;
+    justify-content: center; /* 가로 가운데 */
+    align-items: center;     
+    opacity: 1;
+    visibility: visible;
+  }
+  .lushis > .container > .txt {
+    width: 40%;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-bottom:100px;
+  }
+  .lushis > .container > .txt > h2 {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+  }
+  .lushis > .container > .txt > p {
+    padding-top: 2vh;
+    font-size: 16px;
+    color: #333;
+  }
+
+  /*LUSH line-up*/
+  .lineup {
+    background-color: #fff;
+    padding: 5vh 45px;
+    max-width: 1920px;
+  }
+  .lineup > .sub-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 25px; right: 45px;
+    transform: rotate(90deg) translateX(100%);
+    transform-origin: center right;
+  }
+  .lineup > .sub-title > h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+  }
+  .lineup > .sub-title > .line {
+    width: 50px;
+    height: 1px;
+    background-color: #111;
+  }
+  .lineup > .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .lineup > .container > .txt {
+    display: flex;
+    flex-direction: column;
+    color: #111;
+  }
+  .lineup > .container > .txt > h2 {
+    font-size: 32px;
+    font-weight: 700;
+    padding-bottom: 5vh;
+  }
+  .lineup > .container > .txt > p {
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  /*이미지wrap*/
+  .lineup > .container > .img-wrap {
+    width: 100%;
+    display: flex;
+  }
+  .lineup > .container > .img-wrap > .main {
+    width: 50%;
+    height: 100%;
+    position: relative;
+  }
+  .lineup > .container > .img-wrap > .main > .main-img {
+    width: 100%;
+    height: 100%;
+  }
+  .lineup > .container > .img-wrap > .main > .main-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .lineup > .container > .img-wrap > .main > .main-img > .txt {
+    position: absolute;
+    bottom: 0; left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    padding: 20px;
+  }
+  .lineup > .container > .img-wrap > .main > .main-img > .txt > h2 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .lineup > .container > .img-wrap > .main > .main-img > .txt > button {
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    width: fit-content;
+    cursor: pointer;
+  }
+  .lineup > .container > .img-wrap > .sub {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 50%;
+  }
+  .lineup > .container > .img-wrap > .sub > .sub-img {
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    position: relative;
+  } 
+  .lineup > .container > .img-wrap > .sub > .sub-img > img {
+    width: 100%;
+  }
+  .lineup > .container > .img-wrap > .sub > .sub-img > .txt {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    left: 0; bottom: 0;
+    padding: 10px;
+    transition: 0.5s ease-in;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .lineup > .container > .img-wrap > .sub > .sub-img > .txt > h4 {
+    font-size: 12px;
+    color: #f1f1f1;
+    font-weight: 400;
+    padding: 0.5vh 0;
+  }
+  .lineup > .container > .img-wrap > .sub > .sub-img > .txt > p {
+    font-size: 14px;
+    color: #f1f1f1;
+    padding: 0.5vh 0;
+  }
+  .lineup > .container > .img-wrap > .sub > .sub-img > .txt > h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f1f1f1;
+    line-height: 1.5;
+    border-bottom: 2px solid #f1f1f1;
+    width: fit-content;
+  }
+  .lineup > .container > .img-wrap > .sub > .sub-img:hover .txt {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+
+
+@media (max-width: 992px) {
+  .service {
+    padding: 15vh 40px;
+  }
+  .service > .sub-title {
+    top: 20px; left: 40px;
+  }
+  .service > .sub-title > h4 {
+    font-size: 14px;
+  }
+  .service > .sub-title > .line {
+    width: 80px;
+  }
+  .service > .container {
+    overflow-x: scroll; 
+  }
+  .service > .container > .card-wrap {
+    /* min-width: 992px; */
+    width: 300%;
+    gap: 0px;
+  }
+  .service > .container > .card-wrap > .card {
+    width: 100%;
+    padding: 0 25px;
+  }
+  .service > .container > .card-wrap > .card > img {
+    width: 50%;
+    height: auto;
+  }
+   /*3페이지*/
+   .lushis {
+    padding: 15vh 40px;
+  }
+  .lushis > .container > .img-box > h2 {
+    font-size: 28px;
+  }
+  .lushis > .sub-title > h4 {
+    font-size: 14px;
+  }
+}
 
 /*768*/
 @media (max-width: 768px) {
-  header > .container > #top > .w-768_nav { display: block; }
+  header > .container > #top > .w-768_nav { 
+    display: block;
+}
   header > .container > #top > .nav{
     display: none;
   }
@@ -267,9 +563,33 @@ header > .container > #top > .nav > ul > li > a {
   #title > .icon-box > .icon > p {
     font-size: 16px;
   }
+  /*2페이지*/
+  .service > .title > h4 {
+    font-size: 16px;
+  }
+  .service > .title > h2 {
+    font-size: 28px;
+  }
+  /*3페이지*/
+  .lushis > .container > .img-box > h2 {
+    font-size: 22px;
+  }
+  /*7페이지*/
+  .lineup > .container > .img-wrap {
+    justify-content: center;
+    align-items: center;
+  }
+  .lineup > .container > .img-wrap > .main {
+    width: 100%;
+    
+  }
+  .lineup > .container > .img-wrap > .sub {
+    display: none;
+  }
 }
+
 /*600*/
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   #title > .txt >  h2 {
     top: 10%; right: 5%;
   }
@@ -286,11 +606,75 @@ header > .container > #top > .nav > ul > li > a {
   #title > .icon-box > .icon {
     padding: 10px 20px;
   }
+
+  /*2페이지*/
+  .service {
+    padding: 15vh 20px;
+  }
+  .service > .sub-title {
+    display: none;
+  }
+
+  /*3페이지*/
+  .lushis {
+    padding:20px;
+  }
+  .lushis > .sub-title {
+    transform: rotate(0);
+    left: 20px;
+  }
+  .lushis:nth-child(even) .sub-title {
+    transform: rotate(0);
+    left: 20px;
+  }
+  .lushis > .sub-title > h4 {
+    font-size: 14px;
+  }
+  .lushis > .container {
+    width: 100%;
+    height:100%;
+    flex-direction: column;
+    justify-content: center;
+    /* align-content: space-between; */
+    /* gap: 0; */
+    /* gap: 5vh; */
+  }
+  .lushis > .container > .img-box {
+    width: 100%;
+    /* max-height: 300px; */
+  }
+  .lushis > .container > .img-box > img {
+    width: 100%;
+    max-height: 500px;
+  }
+  .lushis > .container > .txt {
+    width: 100%;
+    padding-bottom: 0;
+    justify-content: space-between;
+  }
+  .lushis > .container > .txt > h2 {
+    font-size: 18px;
+  }
+  .lushis > .container > .txt > p {
+    font-size: 14px;
+  }
+
+  /*7페이지*/
+  .lineup > .sub-title {
+    display: none;
+  }
+
 }
 
 /*485*/
 @media (max-width: 485px){
+  header > .container > #top  {
+    padding: 0 20px;
+  }
   #title > .txt > h2 {
     font-size: 35px;
+  }
+  header > .container > #top > .logo {
+    font-size: 34px;
   }
 }
