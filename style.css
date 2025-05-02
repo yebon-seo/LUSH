@@ -1042,7 +1042,7 @@ header > .container > #top > .nav > ul > li > a {
     width: 80vw;
   }
   /*9페이지*/
-  .lushis > .sub-title > h4 {
+  .lush-campaign > .sub-title > h4 {
     font-size: 14px;
   }
   .lush-campaign > .container > .img-wraper > .img-box > .txt > .bottom-txt > h2 {
@@ -1051,6 +1051,7 @@ header > .container > #top > .nav > ul > li > a {
   .lush-campaign > .container > .img-wraper > .img-box > .txt > .bottom-txt > h4 {
     font-size: 20px;
   }
+
 
 }
 
@@ -1073,6 +1074,10 @@ header > .container > #top > .nav > ul > li > a {
   }
   .lush-spa > .container > .txt > p {
     text-align: left;
+  }
+  /*9페이지*/
+  .lush-campaign > .sub-title {
+    display: none;
   }
   /*10페이지*/
   .bottom > figure {
