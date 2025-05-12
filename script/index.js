@@ -61,12 +61,15 @@ function handleScroll(e) {
   setTimeout(() => {
     isScrolling = false;
   }, 700);
-  if (e.deltaY > 0 && current < total) {
+  
+  if (e.deltaY > 0 && current < total) {//스크롤을 아래로 내렸을때 e.deltaY = 양수
     current++;
+    toggletopBtn()
     upSections();
-  } else if (e.deltaY < 0 && current > 1) {
+  } else if (e.deltaY < 0 && current > 1) { //스크롤을 위로 올렸을때 e.deltaY = 음수
     downSection();
     current--;
+    toggletopBtn()
   }
 }
 function upSections() {
@@ -105,4 +108,71 @@ const swiper = new Swiper('.swiper', {
     delay: 3000,
     disableOnInteraction: false,
   },
+});
+
+/*페이지 이동*/
+const menuItems = document.querySelectorAll("#page1 .nav ul li a");
+
+const menu1 = menuItems[0];
+const menu2 = menuItems[1];
+const menu3 = menuItems[2];
+const menu4 = menuItems[3];
+
+// console.log(menu1);
+
+menu1.addEventListener("click", function (e) {
+  e.preventDefault();
+  for (let i = 1; i <= 3; i++) {
+    current = i
+    const section = document.getElementById(`page${current}`);
+    section.style.transform = `translateY(0%)`;
+  }
+})
+
+menu2.addEventListener("click", function (e) {
+  e.preventDefault();
+  for (let i = 1; i <= 7; i++) {
+    current = i
+    const section = document.getElementById(`page${current}`);
+    section.style.transform = `translateY(0%)`;
+  }
+})
+
+menu3.addEventListener("click", function (e) {
+  e.preventDefault();
+  for (let i = 1; i <= 8; i++) {
+    current = i
+    const section = document.getElementById(`page${current}`);
+    section.style.transform = `translateY(0%)`;
+  }
+})
+
+menu4.addEventListener("click", function (e) {
+  e.preventDefault();
+  for (let i = 1; i <= 9; i++) {
+    current = i
+    const section = document.getElementById(`page${current}`);
+    section.style.transform = `translateY(0%)`;
+  }
+})
+
+/*탑버튼 이동*/
+const topBtn = document.querySelector("#topbtn");
+// 현재 섹션 값에 따라 탑 버튼 표시/숨기기
+function toggletopBtn() {
+  if (current > 1) { // current가 1보다 크면 버튼 표시
+    topBtn.classList.add("show");
+  } else {
+    topBtn.classList.remove("show");
+  }
+}
+
+// 탑 버튼 클릭 시 첫 번째 섹션으로 이동
+topBtn.addEventListener("click", () => {
+  for(let i = 2; i <= 9; i++){
+    const section = document.getElementById(`page${i}`);
+    section.style.transform = `translateY(100%)`;
+  }
+  current = 1;
+  topBtn.classList.remove("show");
 });
